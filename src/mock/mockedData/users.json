@@ -1,0 +1,48 @@
+{
+    "queryUsers": {
+    "data":{
+    "queryUsers":[
+    {
+      "uuid": "jhk-fgh-klkg-rty78",
+      "first_name": "Tom",
+      "last_name": "Lethame",
+      "status": "invited",
+      "primary_email": "tom@gmail.com",
+      "username": "admin"
+    },
+    {
+      "uuid": "abc-def-ghij-12345",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "status": "active",
+      "primary_email": "alice@gmail.com",
+      "username": "alice123"
+    },
+    {
+      "uuid": "xyz-pqr-mnop-67890",
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "status": "pending",
+      "primary_email": "bob@gmail.com",
+      "username": "bob_s"
+    },
+    {
+      "uuid": "lmn-opq-rstu-24680",
+      "first_name": "Eva",
+      "last_name": "Brown",
+      "status": "invited",
+      "primary_email": "eva@gmail.com",
+      "username": "eva_brown"
+    },
+    {
+      "uuid": "ijk-uvw-xyz-13579",
+      "first_name": "Michael",
+      "last_name": "Clark",
+      "status": "active",
+      "primary_email": "michael@gmail.com",
+      "username": "mike_c"
+    }
+  ]
+}
+}
+}
