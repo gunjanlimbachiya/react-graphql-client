@@ -11,8 +11,9 @@ export async function getUsers(): Promise<Users> {
     });
 
     // Extract and return the users from the response
+    console.log(response); 
+
     return response.data.data.queryUsers;
-    console.log(response.data.data.queryUsers); 
   } catch (error) {
     // Handle errors here
     console.error('Error fetching users:', error);
