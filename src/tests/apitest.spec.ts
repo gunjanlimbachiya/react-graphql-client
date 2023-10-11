@@ -33,3 +33,39 @@ describe('getUsers', () => {
     await expect(getUsers(axios)).rejects.toThrow('Request failed');
   });
 });
+// ParentComponent.test.js
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import ParentComponent from './ParentComponent';
+import ChildComponent from './ChildComponent'; // Import your ChildComponent
+
+jest.mock('./api');
+
+test('receives and processes data from child component', () => {
+  const mockChildData = {
+    key: 'value',
+    // ...other properties
+  };
+
+  const { getByText, getByTestId } = render(<ParentComponent />);
+
+  // Mock the sendDataToParent function to simulate data from ChildComponent
+  const sendDataToParentMock = jest.fn();
+  jest.spyOn(ChildComponent, 'default').mockImplementation(props => {
+    props.sendDataToParent(mockChildData);
+    return <div>Mocked Child Component</div>;
+  });
+
+  // Find the button in the child component
+  const button = getByText('Send Data to Parent');
+  
+  // Click the button to trigger the callback from the child component
+  fireEvent.click(button);
+
+  // Check if the parent component received data from the child component
+  expect(sendDataToParentMock).toHaveBeenCalledWith(mockChildData);
+
+  // Check if the received data is displayed in the parent component
+  const receivedDataElement = getByTestId('received-data');
+  expect(receivedDataElement).toHaveTextContent(JSON.stringify(mockChildData));
+});
